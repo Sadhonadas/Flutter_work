@@ -7,6 +7,7 @@ class InputField extends StatelessWidget {
   final String hintText;
   final String labelText;
   final Icon prefixIcon;
+  final bool obscureText;
 
   
   const InputField({super.key,
@@ -15,7 +16,8 @@ class InputField extends StatelessWidget {
                    required this.validator,
                    required this.hintText,
                    required this.labelText,
-                   required this.prefixIcon
+                   required this.prefixIcon,
+                   this.obscureText = false,
   });
 
   @override
@@ -23,7 +25,7 @@ Widget build(BuildContext context) {
   return TextFormField(
     controller: controller,
     keyboardType: keyboardType,
-    obscureText: true,
+    obscureText: obscureText,
     validator: validator,
     decoration: InputDecoration(
       prefixIcon: prefixIcon,
